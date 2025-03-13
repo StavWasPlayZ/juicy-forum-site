@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="he">
+    <head runat="server">
+        <title>JFS</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="image" content="logo.png"/>
+
+        <link href="Master Style.css" rel="stylesheet" />
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <nav>
+            <ul style="z-index: 9">
+                <li href="Home.aspx" id="logo"></li>
+                <li href="<%= (Session["uId"] == null) ? "Login.aspx" : "Profile.aspx" %>" style="background-image: url('<%= WebApplication1.Utils.GetPfp(Session["uPfp"]) %>')"
+                    class="pfp square circleClickable <%= (Session["uId"] == null) ? "notLogged" : "" %>" tooltip="<%=Session["UserName"] %>"></li>
+                <li style="flex: 150%"></li>
+
+                <%=((string)Session["UserType"] == "blk") ? "" : "<li href='NewPost.aspx' value='New Post'></li>" %>
+                <li href="Forums.aspx" value="Main Forum"></li>
+                <li href="About.aspx" value="About Us"></li>
+
+                <li id="searchBar">
+                    <div class="otherCenter">
+                        <input type="text" placeholder="Search The Website..." class="otherCenter"/>
+                        <div id="search"></div>
+                    </div>
+                </li>
+
+                <li style="flex: 50%;"></li>
+                <li id="themebtn" class="square circleClickable"></li>
+                <li style="flex: 5%"></li>
+            </ul>
+        </nav>
+        <script>
+            // Add according redirections to every button that requests it
+            const buttons = document.querySelectorAll("nav > ul > li[href]");
+            buttons.forEach((button) =>
+                button.addEventListener("click", () => window.location.href = (button.getAttribute("href")))
+            );
+
+
+            // Search functionality | send to search only if logged in
+            const searchPar = document.querySelector("#searchBar > div"),
+                searchBar = searchPar.querySelector("input"), searchBtn = searchPar.querySelector("#search");
+            function search() {
+                if (searchBar.value != "") {
+                    // Restrict <, > (HTML vulnerabilities) and & (Query strings)
+                    if (searchBar.value.includes("<") || searchBar.value.includes(">") || searchBar.value.includes("&"))
+                        searchPar.style.border = "2px solid red";
+                    else
+                        window.location.href = <%=(Session["uId"] == null) ? "false" : "true"%> ?
+                            ("Search.aspx?term=" + searchBar.value.replace(" ", "+")) : "Login.aspx";
+                }
+            }
+            // Apply it | same as above
+            <%= (Session["uId"] == null) ?
+                "searchBar.addEventListener('click', (event) => window.location.href = 'Login.aspx');" :
+
+                "searchBar.addEventListener('keypress', (event) => {" +
+                    "if (event.key == 'Enter')" +
+                        "search();" +
+                "});"
+            %>
+            searchBtn.addEventListener("click", () => search());
+        </script>
+        <main>
+            <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
+        </main>
+        <footer id="endfooter">
+            test c:
+        </footer>
+    </body>
+</html>

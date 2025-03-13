@@ -1,0 +1,25 @@
+﻿.profile {
+    position: absolute;
+}
+
+    .profile > .pfp {
+        width: 55px;
+        height: 55px;
+    }
+
+    .profile > p {
+        position: absolute;
+        top: 6px;
+        left: 65px;
+        width: max-content;
+        margin: 0;
+        font-size: 1.3em;
+        max-height: 85%;
+    }
+
+    .profile > .role {
+        position: absolute;
+        bottom: 2px;
+        left: 65px;
+        width: max-content;
+    }

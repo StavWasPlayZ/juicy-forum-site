@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="IdentificationForm.master.cs" Inherits="WebApplication1.IdentificationForm" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        #propaganda {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            pointer-events: none;
+
+            width: 40%;
+        }
+
+        #identificationForm {
+            font-size: 1.5em;
+            position: relative;
+            width: 30%;
+            background-color: #2b2b2b;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            padding: 40px;
+            padding-top: 70px;
+            overflow: hidden;
+        }
+        #identificationForm::before {
+            content: attr(formName);
+            display: block;
+            width: 100%;
+            height: 50px;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            background-color: #3c3c3c;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+        }
+        #identificationForm label {
+            font-size: 1.3em;
+            color: white;
+        }
+
+        #message {
+            margin-bottom: 0;
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: red;
+        }
+    </style>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
+    <div style="height: calc(var(--bar-height) + 10px)"></div>
+
+    <img id="propaganda" src="join.png" class="center"/>
+    <p class="center" style="width: fit-content; font-weight: 700; font-size: 1.8em; user-select: none;">You will never regret your life choices again.</p>
+    <br /><br />
+
+
+    <asp:ContentPlaceHolder ID="form" runat="server"></asp:ContentPlaceHolder>
+
+    <script src="Validation.js"></script>
+    <script src="Label.js"></script>
+</asp:Content>

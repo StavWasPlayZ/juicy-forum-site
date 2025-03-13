@@ -1,0 +1,87 @@
+﻿/*:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .85em;
+    --bar-height: 46px;
+    --bar-color: white;
+    --button-color1: 241, 241, 241;
+    --button-color2: 220, 240, 240;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+nav > ul {
+    z-index: 9;
+    opacity: .5;
+    position: fixed;
+    display: inline-flex;
+    width: 100vw;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-shadow: 0 1px 3px #66666669;
+    background-color: var(--bar-color);
+    transition: .2s ease-out transform, .1s linear opacity;
+}
+nav > ul:hover {
+    transform: scale(1.01);
+    opacity: 1;
+}
+
+    nav > ul > li {
+        background-color: rgba(var(--button-color1), .5);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        transition: .15s linear background-color, .2s linear border-radius;
+    }
+    nav > ul > li:nth-child(odd) {
+        background-color: rgba(var(--button-color2), .5);
+    }
+        nav > ul > li:nth-child(odd):hover {
+            background-color: rgba(var(--button-color2), .8);
+        }
+        nav > ul > li:nth-child(odd):active {
+            background-color: rgba(var(--button-color2), 1);
+        }
+
+        nav > ul > li:hover {
+            border-radius: 6px;
+        }
+        nav > ul > li:nth-child(even):hover {
+            background-color: rgba(var(--button-color1), .8);
+        }
+        nav > ul > li:nth-child(even):active {
+            background-color: rgba(var(--button-color1), 1);
+        }
+
+
+        nav > ul > li::before {
+            content: attr(value);
+            display: block;
+            width: max-content;
+            line-height: var(--bar-height);
+            margin: auto auto;
+        }
+
+#themebtn {
+    height: 100%;
+}
+
+main {
+    min-height: 100vh;
+    height: fit-content;
+    overflow: hidden;
+}
+footer {
+    z-index: 9;
+    color: white;
+    background-color: #454545;
+    width: 100vw;
+    text-align: center;
+    line-height: 60px;
+}*/

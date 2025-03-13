@@ -1,0 +1,307 @@
+﻿:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .85em;
+    --bar-height: 60px;
+    --bar-color: white;
+    --button-color1: 241, 241, 241;
+    --button-color2: 220, 240, 240;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+}
+main {
+    min-height: 100vh;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+    top: calc(var(--bar-height));
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+
+/* Navigation Bar */
+nav > ul {
+    font-size: 1.2rem;
+    z-index: 9;
+    opacity: .5;
+    position: fixed;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-shadow: 0 1px 3px #66666669;
+    background-color: var(--bar-color);
+    transition: .2s ease-out transform, .1s linear opacity;
+}
+
+    nav > ul:hover {
+        transform: scale(1.01);
+        opacity: 1;
+    }
+
+    nav > ul > li {
+        background-color: rgba(var(--button-color1), .5);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        transition: .15s linear background-color, .2s linear border-radius;
+    }
+
+        nav > ul > li:nth-child(odd) {
+            background-color: rgba(var(--button-color2), .5);
+        }
+
+            nav > ul > li:nth-child(odd):hover {
+                background-color: rgba(var(--button-color2), .8);
+            }
+
+            nav > ul > li:nth-child(odd):active {
+                background-color: rgba(var(--button-color2), 1);
+            }
+
+        nav > ul > li:hover {
+            border-radius: 6px;
+        }
+
+        nav > ul > li:nth-child(even):hover {
+            background-color: rgba(var(--button-color1), .8);
+        }
+
+        nav > ul > li:nth-child(even):active {
+            background-color: rgba(var(--button-color1), 1);
+        }
+
+
+        nav > ul > li[value]::before {
+            content: attr(value);
+            display: block;
+            width: max-content;
+            line-height: var(--bar-height);
+            margin: auto auto;
+        }
+
+        nav > ul > li[href]:hover {
+            cursor: pointer;
+        }
+
+#logo {
+    position: relative;
+    background-image: url("jsf logo.png");
+    background-color: #151515;
+    background-size: contain;
+    height: var(--bar-height);
+    padding-left: calc(var(--bar-height) * 1.5);
+    width: calc(var(--bar-height) * 1.5);
+    margin-right: 5px;
+}
+
+/* Profile picture used not only by navigation bar */
+.pfp {
+    border-radius: 50%;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+/* Indicating that the user is not logged in */
+.notLogged::after {
+    content: '';
+    display: inline-block;
+    -moz-border-radius: 45%;
+    -webkit-border-radius: 45%;
+    border-radius: 45%;
+    -moz-transition: border-radius linear .2s;
+    -o-transition: border-radius linear .2s;
+    -webkit-transition: border-radius linear .2s;
+    transition: border-radius linear .2s;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: .5;
+}
+.notLogged:hover::after {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/* TODO merge centers */
+.otherCenter {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Unused :( */
+#themebtn {
+    background-color: #151515;
+}
+
+
+#searchBar {
+    -ms-flex: 150%;
+    -webkit-flex: 150%;
+    flex: 150%;
+    background-color: white;
+    height: var(--bar-height)
+}
+
+    #searchBar > div {
+        width: 95%;
+        height: 80%;
+        border: 2px solid gray;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        border-radius: 100px;
+        text-underline-offset: 10px;
+        -moz-transition: border ease-out .1s, background-color ease-out .1s;
+        -o-transition: border ease-out .1s, background-color ease-out .1s;
+        -webkit-transition: border ease-out .1s, background-color ease-out .1s;
+        transition: border ease-out .1s, background-color ease-out .1s;
+    }
+
+        #searchBar > div:focus-within {
+            border: 3px solid rgb(109, 109, 109);
+            background-color: rgb(246, 246, 246);
+        }
+
+        #searchBar > div > input {
+            width: 90%;
+            height: 90%;
+            border: none;
+            background: none;
+            font-size: 1em;
+            outline: none;
+        }
+
+#search {
+    position: absolute;
+    height: calc(var(--bar-height) * 0.5);
+    width: calc(var(--bar-height) * 0.5);
+    right: 10px;
+    top: 45%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    background-image: url('search.svg');
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+}
+
+    #search::before {
+        display: block;
+        content: '';
+        position: absolute;
+        background-color: black;
+        opacity: 15%;
+        border-radius: 50%;
+        width: 140%;
+        height: 140%;
+        bottom: 42%;
+        right: 50%;
+        -moz-transform: translate(50%, 50%) scale(0);
+        -ms-transform: translate(50%, 50%) scale(0);
+        -o-transform: translate(50%, 50%) scale(0);
+        -webkit-transform: translate(50%, 50%) scale(0);
+        transform: translate(50%, 50%) scale(0);
+        -moz-transition: transform ease-in-out .1s;
+        -o-transition: transform ease-in-out .1s;
+        -webkit-transition: transform ease-in-out .1s;
+        transition: transform ease-in-out .1s;
+    }
+
+    #search:hover::before {
+        -moz-transform: translate(50%, 50%) scale(1);
+        -ms-transform: translate(50%, 50%) scale(1);
+        -o-transform: translate(50%, 50%) scale(1);
+        -webkit-transform: translate(50%, 50%) scale(1);
+        transform: translate(50%, 50%) scale(1);
+    }
+
+.square {
+    height: var(--bar-height);
+    width: var(--bar-height);
+    flex-shrink: 0;
+}
+/* Navigation circle elements */
+.circleClickable {
+    border-radius: 45%;
+    -moz-transition: border-radius linear .2s;
+    -o-transition: border-radius linear .2s;
+    -webkit-transition: border-radius linear .2s;
+    transition: border-radius linear .2s;
+}
+
+    .circleClickable:hover {
+        border-radius: 50%;
+    }
+
+/* User name tooltip */
+[tooltip] {
+    position: relative;
+}
+    /* Unfortunately, repetetive code for psudeos is kind of a must-have, since classes don't work */
+    [tooltip]::before {
+        display: block;
+        content: attr(tooltip);
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: max-content;
+        background-color: rgb(20, 20, 20);
+        color: white;
+        padding: 1px 3px;
+        margin: auto;
+        text-align: center;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -moz-transform: translate(-50%, 0) scale(0);
+        -ms-transform: translate(-50%, 0) scale(0);
+        -o-transform: translate(-50%, 0) scale(0);
+        -webkit-transform: translate(-50%, 0) scale(0);
+        transform: translate(-50%, 0) scale(0);
+        -moz-transition: all ease-out .1s;
+        -o-transition: all ease-out .1s;
+        -webkit-transition: all ease-out .1s;
+        transition: all ease-out .1s;
+    }
+
+    [tooltip]:hover::before {
+        -moz-transform: translate(-50%, 110%) scale(1);
+        -ms-transform: translate(-50%, 110%) scale(1);
+        -o-transform: translate(-50%, 110%) scale(1);
+        -webkit-transform: translate(-50%, 110%) scale(1);
+        transform: translate(-50%, 110%) scale(1);
+    }
+
+
+#endfooter {
+    color: white;
+    background-color: #454545;
+    width: 100vw;
+    text-align: center;
+    line-height: 60px;
+    position: relative;
+    bottom: -60px;
+}

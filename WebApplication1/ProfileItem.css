@@ -1,0 +1,54 @@
+﻿.profile {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    background-color: white;
+    border: 2px solid gray;
+    -moz-transition: transform ease-in-out .2s;
+    -o-transition: transform ease-in-out .2s;
+    -webkit-transition: transform ease-in-out .2s;
+    transition: transform ease-in-out .2s;
+}
+
+    .profile:hover {
+        -moz-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+        -o-transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+
+    .profile > .pfp {
+        height: 90px;
+        width: 90px;
+        position: relative;
+        top: 5px; /* (100px [.profile height] - 90px [this height]) / 2 */
+        left: 7px;
+    }
+
+    .profile > p {
+        width: fit-content;
+        position: absolute;
+        left: 120px;
+    }
+
+    .profile > .mainName {
+        top: -2px;
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .profile > .secondName {
+        top: calc(-2px + 1.5em);
+        font-size: 1.2em;
+    }
+
+    .profile > .role {
+        width: fit-content;
+        position: absolute;
+        left: 120px;
+        bottom: 15px;
+    }

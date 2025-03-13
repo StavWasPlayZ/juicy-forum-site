@@ -1,0 +1,65 @@
+﻿.forum {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 3px 0 3px;
+    padding: 3px 0;
+    overflow: hidden;
+    border: 2px solid gray;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-transition: transform ease-in-out .15s;
+    -o-transition: transform ease-in-out .15s;
+    -webkit-transition: transform ease-in-out .15s;
+    transition: transform ease-in-out .15s;
+}
+
+    .forum:hover {
+        -moz-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+        -o-transform: scale(1.03);
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+    }
+
+    .forum .profile {
+        top: 5.5px; /* (66 - 55) / 2 */
+        left: 7px;
+    }
+
+        .forum .profile > .mainName {
+            max-width: 150px;
+            overflow: hidden;
+        }
+
+.vr {
+    height: 100%;
+    width: 2px;
+    background-color: rgb(68, 68, 68);
+    position: absolute;
+}
+
+.forum article {
+    position: absolute;
+    left: 218px;
+    width: 100%;
+    height: 60px;
+}
+
+    .forum article > h2 {
+        margin: 6px 0 0 10px;
+    }
+
+    .forum article > p {
+        margin: 0;
+        margin-left: 10px;
+        font-size: 1em;
+    }
+
+    .forum article > .postTime {
+        position: absolute;
+        right: 225px;
+        bottom: 0;
+        margin: 0;
+    }
