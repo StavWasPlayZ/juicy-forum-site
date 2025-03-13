@@ -56,16 +56,16 @@ When logging in, the user must enter the email and password with which they regi
 
 ## Operating the Website
 
-- To log in as a blocked user (*Ehe Tenandayo*), enter the following login information:
+- To log in as a blocked user (*Ehe Tenandayo*), enter the following login details:
 	- **EMAIL**: `lol@um.what`
 	- **PASSWORD**: `Lol123`
-- To log in as a regular user (*Normie123*), enter the following login information:
+- To log in as a regular user (*Normie123*), enter the following login details:
 	- **EMAIL**: `spammer@mail.ru`
 	- **PASSWORD**: `spammer123`
-- To log in as an administrator (*Administrator*), enter the following login information:
+- To log in as an administrator (*Administrator*), enter the following login details:
 	- **EMAIL**: `admin@jfs.co.il`
 	- **PASSWORD**: `admin`
-- To log in as an creator (*StavWasPlayZ*), enter the following login information:
+- To log in as an creator (*StavWasPlayZ*), enter the following login details:
 	- **EMAIL**: `mypersonalemailaddrredacted@forabvious.reasons`
 	- **PASSWORD**: `ThisPasswordIsNotEncrypted1`
 
