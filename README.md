@@ -4,7 +4,7 @@
 
 This ASP.NET website was submitted as part of my project for the 10th-grade Bagrut of Computer Science back in the summer of '22.
 
-*(Though it was made and submitted in 8th grade bc I'm just that cool 😎)*
+*(Though it was made and submitted in 8th grade 'cuz I'm just that cool 😎)*
 
 The project was finished in the span of about 2 months.
 
@@ -35,9 +35,9 @@ and view various articles throughout the site; but is not able to create them th
 
 2. **Guest** *(not logged in/registered)*: A user with this role can view the latest articles created by users registered on the site, but cannot freely search for them; but is not able to create them themselves.
 
-3. Registered user: A user with this role is able to browse the site freely; create articles, search the site and design their own profile. They can also delete articles created by them.
+3. **Registered user**: A user with this role is able to browse the site freely; create articles, search the site and design their own profile. They can also delete articles created by them.
 
-4. Administrator & Creator: A user with any of these roles is granted all the permissions of a regular, registered user, but is also granted the ability to modify and delete other user's posts and profiles as they wish.
+4. **Administrator & Creator**: A user with any of these roles is granted all the permissions of a regular, registered user, but is also granted the ability to modify and delete other user's posts and profiles as they wish.
 
 Registration and login are carried out through the registration form located in the profile picture on the navigation bar of all pages.
 
