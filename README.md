@@ -50,7 +50,7 @@ When logging in, the user must enter the email and password with which they regi
 - Languages: *JavaScript, HTML, and the ASP.NET Framework*.
 - IDE and Environment: *Visual Studio 2020* under the notorious *Windows 10* <sub>( no Linux support :[ )</sub>
 > Note that I actually write that in as-is lmaaoooo  
-> Also I did not know about C-Lion nor would have I had my parent's financial approval and support for it
+> Also I did not know about C-Lion nor would have I had my parents' financial approval and support for it
 
 - Database provider: Microsoft SQL Server
 
